@@ -4,7 +4,7 @@ let shareData = {
         url: 'https://developer.mozilla.org',
       }
 
-      const btn = document.querySelector('button');
+      const btn = document.querySelector('Share');
       const resultPara = document.querySelector('.result');
 
       btn.addEventListener('click', () => {
