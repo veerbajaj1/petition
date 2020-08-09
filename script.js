@@ -1,18 +1,16 @@
-let shareData = {
-        title: 'MDN',
-        text: 'Learn web development on MDN!',
-        url: 'https://developer.mozilla.org',
-      }
+var shareBtn = document.getElementById('share-btn');
+    shareFallback = document.getElementById('share-fallback');
+    pageTitle = "Test Share";
+    pageUrl = "https://veerbajaj1.github.io/petition";
 
-      const btn = document.querySelector('Share');
-      const resultPara = document.querySelector('.result');
-
-      btn.addEventListener('click', () => {
-        navigator.share(shareData)
-          .then(() =>
-            resultPara.textContent = 'MDN shared successfully'
-          )
-          .catch((e) =>
-            resultPara.textContent = 'Error: ' + e
-          )
+shareBtn.addEventListener("click", function(ev) {
+  if (navigator.share) {
+    navigator.share({
+        text: pageTitle,
+        url: pageUrl
       });
+  } else {
+    shareFallback.style.display = 'flex';
+    shareBtn.style.display = 'none';
+  }
+});
