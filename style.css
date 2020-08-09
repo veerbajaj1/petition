@@ -507,3 +507,9 @@ a:hover {
   text-decoration:none;
   color:black;
 }
+
+#tip {
+  display: none;
+}
+#tip.show {
+  display: block;
